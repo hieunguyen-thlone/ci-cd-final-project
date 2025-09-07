@@ -8,6 +8,6 @@ spec:
     app: myapp
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 5000
-  type: NodePort
+      port: 8000        # Cổng service trong cluster
+      targetPort: 8000  # Cổng container (gunicorn)
+      type: NodePort        # Hoặc LoadBalancer nếu cloud provider hỗ trợ
